@@ -9,6 +9,7 @@ package part3.defaultmethods;
  *
  * @author Dennis
  */
+@FunctionalInterface
 public interface Loggable {
 
     //Always final and static
