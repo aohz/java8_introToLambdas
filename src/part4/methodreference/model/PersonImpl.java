@@ -8,6 +8,10 @@ public class PersonImpl implements Person {
     private String name;
     private int age;
 
+    public PersonImpl() {
+    	
+    }
+    
     public PersonImpl(String name, int age) {
         this.name = name;
         this.age = age;

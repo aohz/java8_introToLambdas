@@ -2,6 +2,9 @@ package part4.methodreference;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.IntFunction;
+import java.util.function.Supplier;
 
 import part4.methodreference.model.Person;
 import part4.methodreference.model.PersonImpl;
@@ -30,6 +33,9 @@ public class Sample1_Sort {
 		System.out.println("-----Sort Using Instance Method Of Arbitrary Object-----------");
 		sortUsingInstanceMethodOfArbitraryObject(people);
 		people.forEach((p) -> System.out.println(p));
+		
+		System.out.println("-----Reference to Constructor-----------");
+		referenceToConstructor();
 	}
 
 	private static void sort(List<PersonImpl> people) {
@@ -53,6 +59,24 @@ public class Sample1_Sort {
 	private static void sortUsingInstanceMethodOfArbitraryObject(List<PersonImpl> people) {
 		Collections.sort(people, PersonImpl::compareByAge);
 	}
+	
+	private static void referenceToConstructor() {
+		Supplier<Person> supplier = () -> new PersonImpl();
+		
+		System.out.println(supplier.get() == supplier.get());
+		
+		Supplier<Person> supplierRefMethod = PersonImpl::new;
+		System.out.println(supplierRefMethod.get() == supplierRefMethod.get());
+		
+		// IntFunction<int[]> supplierArray = (x) -> new int[x];
+		// IntFunction<int[]> supplierArray2 = int[] :: new;   
+	}
+}
+
+interface FuncIf {    
+
+    int[] intArrMaker(int noOfEle);    
+
 }
 
 class ComparisonProvider {
