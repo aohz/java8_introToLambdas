@@ -1,4 +1,4 @@
-package part5.exercise;
+package part5.executearoundpattern.exercise;
 
 import java.util.Arrays;
 import java.util.List;
