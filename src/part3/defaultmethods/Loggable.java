@@ -10,6 +10,7 @@ package part3.defaultmethods;
  * @author aohz
  *
  */
+@FunctionalInterface
 public interface Loggable {
 
     //Always final and static

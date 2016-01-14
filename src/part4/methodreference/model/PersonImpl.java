@@ -8,6 +8,10 @@ public class PersonImpl implements Person {
     private String name;
     private int age;
 
+    public PersonImpl() {
+    	
+    }
+    
     public PersonImpl(String name, int age) {
         this.name = name;
         this.age = age;
@@ -47,7 +51,11 @@ public class PersonImpl implements Person {
     }
 
     //Return type and method signature as in Comparator interface
-    public static int compareByAge(PersonImpl person1, PersonImpl person2) {
+    public static int staticCompareByAge(PersonImpl person1, PersonImpl person2) {
         return Integer.valueOf(person1.age).compareTo(person2.age);
+    }
+    
+    public int compareByAge(PersonImpl person){
+    	 return Integer.valueOf(this.age).compareTo(person.age);
     }
 }
