@@ -1,4 +1,4 @@
-package part5.constructorreference.model;
+package part4.methodreference.model;
 
 @FunctionalInterface
 public interface StudentFactory {

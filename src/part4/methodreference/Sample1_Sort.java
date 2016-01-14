@@ -2,8 +2,6 @@ package part4.methodreference;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.IntFunction;
 import java.util.function.Supplier;
 
 import part4.methodreference.model.Person;
@@ -71,12 +69,6 @@ public class Sample1_Sort {
 		// IntFunction<int[]> supplierArray = (x) -> new int[x];
 		// IntFunction<int[]> supplierArray2 = int[] :: new;   
 	}
-}
-
-interface FuncIf {    
-
-    int[] intArrMaker(int noOfEle);    
-
 }
 
 class ComparisonProvider {
