@@ -7,28 +7,29 @@
 package part1.lambdas.exercises;
 
 /**
+ * Transform code to use lambda expresiones
+ * 
+ * @author aohz
  *
- * @author DSFO
  */
 public class Sample1_WithoutLambda {
-    
-    public static void main (String[] args) {        
-        System.out.println("Main Start...");
-        
-        MyRunnableTask task = new MyRunnableTask();
-        Thread myThread = new Thread(task);
-        myThread.start();
-        System.out.println("...End Main");
-        
-    }
-    
-    
-    public static class MyRunnableTask implements Runnable {
 
-        @Override
-        public void run() {
-            System.out.println("processing in thread");
-        }
-    }
-    
+	public static void main(String[] args) {
+		System.out.println("Main Start...");
+
+		MyRunnableTask task = new MyRunnableTask();
+		Thread myThread = new Thread(task);
+		myThread.start();
+		System.out.println("...End Main");
+
+	}
+
+	public static class MyRunnableTask implements Runnable {
+
+		@Override
+		public void run() {
+			System.out.println("processing in thread");
+		}
+	}
+
 }

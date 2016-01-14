@@ -3,6 +3,11 @@ package part2.collections.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author aohz
+ *
+ */
 public class Person {
 
     private String name;

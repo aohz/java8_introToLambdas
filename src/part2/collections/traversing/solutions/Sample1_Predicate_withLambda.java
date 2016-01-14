@@ -6,6 +6,12 @@ import java.util.function.Predicate;
 
 import part2.collections.model.Person;
 
+/**
+ * Transform code to use lambda expresiones
+ * 
+ * @author aohz
+ *
+ */
 public class Sample1_Predicate_withLambda {
 
     public static void main(String args[]) {

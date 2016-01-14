@@ -6,8 +6,9 @@
 package part3.defaultmethods;
 
 /**
+ * 
+ * @author aohz
  *
- * @author Dennis
  */
 public interface Loggable {
 

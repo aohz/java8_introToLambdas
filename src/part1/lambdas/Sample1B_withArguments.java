@@ -6,6 +6,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 
+ * @author aohz
+ *
+ */
 public class Sample1B_withArguments {
 
 	public static void main(String args[]) {

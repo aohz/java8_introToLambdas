@@ -6,8 +6,10 @@
 package part1.lambdas.exercises;
 
 /**
+ * Transform code to use lambda expresiones
+ * 
+ * @author aohz
  *
- * @author DSFO
  */
 public class Sample2_WithoutLambda {
 

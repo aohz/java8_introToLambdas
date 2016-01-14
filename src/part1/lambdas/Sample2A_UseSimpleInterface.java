@@ -1,5 +1,10 @@
 package part1.lambdas;
 
+/**
+ * 
+ * @author aohz
+ *
+ */
 public class Sample2A_UseSimpleInterface {
 
     @FunctionalInterface

@@ -1,5 +1,10 @@
 package part1.lambdas;
 
+/**
+ * 
+ * @author aohz
+ *
+ */
 public class Sample1A_NoArguments {
 
 	public static void main(String[] args) {
