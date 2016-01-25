@@ -1,22 +1,25 @@
 package part2.collections.traversing.solutions;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
 import part2.collections.model.Person;
 
 /**
- * Transform code to use lambda expresiones
+ * 1- Transform code to use lambda expressions
+ * 2- Sort the list using Collections.sort method and a Lambda Expression
  * 
  * @author aohz
  *
  */
 public class Sample1_Predicate_withLambda {
 
-    public static void main(String args[]) {
-
-        List<Person> people = new ArrayList<>();
+	private static List<Person> people = new ArrayList<>();
+	
+    public static void main(String args[]) {        
 
         people.add(new Person("A Dude", 21));
         people.add(new Person("Jose", 30));
@@ -24,13 +27,27 @@ public class Sample1_Predicate_withLambda {
         people.add(new Person("Angel", 33));
         people.add(new Person("Liusbetty", 19));
 
+        
         Predicate<Person> filterAge = (p) -> p.getAge() < 30;
         Predicate<Person> filterName = (p) -> p.getName().length() < 7;        
+                
+        Comparator<Person> comp = (p1, p2) -> Integer.compare(p1.getAge(), p2.getAge());
         
-        people.forEach((p) -> {        	
-            if (filterAge.and(filterName).test(p)) {
-                System.out.println(p);
-            }
-        });
+		Collections.sort(people, comp);
+				
+		System.out.println("----- Apply filterAge");
+		filter(filterAge);
+		
+		System.out.println("----- Apply both filters");
+		filter(filterAge.and(filterName));
     }
+    
+    
+	private static void filter(Predicate<Person> filter) {
+		people.forEach((p) -> {
+			if (filter.test(p)) {
+				System.out.println(p);
+			}
+		});
+	}
 }

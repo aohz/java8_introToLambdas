@@ -8,7 +8,8 @@ import part2.collections.model.Person;
 
 
 /**
- * Transform code to use lambda expresiones
+ * 1- Transform code to use lambda expressions
+ * 2- Sort the list using Collections.sort method and a Lambda Expression
  * 
  * @author aohz
  *
@@ -25,6 +26,7 @@ public class Sample1_Predicate_NoLambda {
 		people.add(new Person("Angel", 33));
 		people.add(new Person("Liusbetty", 19));
 
+		
 		Predicate<Person> filterAge = new Predicate<Person>() {
 
 			public boolean test(Person person) {

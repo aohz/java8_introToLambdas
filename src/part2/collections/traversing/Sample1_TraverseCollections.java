@@ -1,8 +1,6 @@
 package part2.collections.traversing;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -30,10 +28,6 @@ public class Sample1_TraverseCollections {
 		strings.add("20120212_A");
 		strings.add("LQMM_0753_02-A");
 		strings.add("LQMM_0753_01-a");
-
-		Comparator<String> comp = (String str1, String str2) -> str1.compareToIgnoreCase(str2);
-
-		Collections.sort(strings, comp);
 
 		java7Approach_printCollection(strings);
 
