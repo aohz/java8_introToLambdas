@@ -20,13 +20,13 @@ public class Sample1_methodRererence {
 		// Ex 2
 		LongSupplier getThreadId = () -> Thread.currentThread().getId();
 		// Ex 3
-		BiFunction<String, String, String> getSubString = (s1, s2) -> s1 + s2;
+		BiFunction<String, String, String> concatStrings = (s1, s2) -> s1.concat(s2);
 						
 		// Sol 1
 		Function<Student, Integer> getStudentAgeMR = Student::getAge;				
 		// Sol 2
 		LongSupplier getThreadIdMR = Thread.currentThread()::getId;
 		// Sol 3
-		BiFunction<String, String, String> getSubStringMR = String::concat;
+		BiFunction<String, String, String> concatStringsMR = String::concat;
 	}
 }

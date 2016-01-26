@@ -18,12 +18,14 @@ public class SummarySolutionExercise2 implements Exercise {
 	@Test
 	@Override
 	public void perform() {
-		File[] files = list(".", "xml");
+		String[] files = list(".", "md");
 		Arrays.asList(files).forEach(System.out::println);
 	}
 
-	private static File[] list(String dir, String ext) {
-		File dirFile = new File(dir);
-		return dirFile.listFiles(f -> f.getName().endsWith(ext));
+	private static String[] list(String inputDir, String ext) {
+		File dirFile = new File(inputDir);
+		return dirFile.list((File dir, String name) -> {			
+			return name.endsWith(ext);
+		});
 	}
 }

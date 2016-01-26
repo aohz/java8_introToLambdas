@@ -1,6 +1,7 @@
 package summary.exercises;
 
 import java.io.File;
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -16,10 +17,14 @@ public class SummaryExercise2 implements Exercise {
 
 	@Test
 	@Override
-	public void perform() {	
+	public void perform() {
+		String[] files = list(".", "md");
+		Arrays.asList(files).forEach(System.out::println);
 	}
 
-	private static File[] list(String dir, String ext) {
+	private static String[] list(String inputDir, String ext) {
+		File dirFile = new File(inputDir);
+		dirFile.list(null);
 		return null;
 	}
 }

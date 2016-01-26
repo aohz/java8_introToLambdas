@@ -1,7 +1,9 @@
 package part5.executearoundpattern.exercise;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 /**
  * 
  * Implement a map method that apply a lambda expression to each item of the collection
@@ -14,6 +16,12 @@ import java.util.List;
  *
  */
 public class Mapper {
+	
+	public static <T, R> List<R> map(List<T> list, Function<T, R> f) {
+		List<R> result = new ArrayList<>();
+				
+		return result;
+	}
 		
 	public static List<Integer> getStringLength(List<String> strings){
 		return null;

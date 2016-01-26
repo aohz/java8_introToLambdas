@@ -26,6 +26,13 @@ public class Filter {
 				results.add(s);
 			}
 		}
+		
+//		list.forEach( (s) -> {
+//			if (p.test(s)) {
+//				results.add(s);
+//			}
+//		});
+		
 		return results;
 	}
 
