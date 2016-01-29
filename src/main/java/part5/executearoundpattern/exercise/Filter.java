@@ -6,9 +6,9 @@ import java.util.List;
 
 /**
  * 
- * Implement a filter method that returns a new list filtering the inicial
- * collection using a lambda expression Then. 
- * Test the implementation using a lambda expression that: 
+ * Implement a filter method that returns a new list filtering the initial
+ * collection using a lambda expression 
+ * Then test the implementation using a lambda expression that: 
  * 1- Filtering all empty string 
  * 2- Filtering strings shorter than 3
  * 3- combine both filters

@@ -1,14 +1,23 @@
 package part1.lambdas;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 /**
  * 
  * @author aohz
  *
  */
 public class Sample1A_NoArguments {
-
+	
 	public static void main(String[] args) {
 
+		Predicate<Integer> predicate = 
+				(Integer num) -> num > 0;
+				System.out.println(predicate.test(10));
+
+		
 		java7Approach_singleLine();
 		java8Approach_singleLine();
 		java8Approach_multipleLines();
@@ -28,13 +37,14 @@ public class Sample1A_NoArguments {
 			}
 		};
 
-		new Thread(r1).start();
+		new Thread(r1).start();		
 	}
 
 	public static void java8Approach_singleLine() {
 
 		Runnable r1 = () -> System.out.println("Single Line (lambda): Running Thread");
 		new Thread(r1).start();
+		// new Thread(() -> System.out.println("Single Line (lambda): Running Thread")).start();
 	}
 
 	// -----------------------------
@@ -66,6 +76,6 @@ public class Sample1A_NoArguments {
 			}
 		};
 
-		new Thread(r1).start();
+		new Thread(r1).start();		
 	}
 }

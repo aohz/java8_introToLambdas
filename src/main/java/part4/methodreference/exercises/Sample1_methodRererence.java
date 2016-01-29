@@ -20,6 +20,6 @@ public class Sample1_methodRererence {
 		// Ex 2
 		LongSupplier getThreadId = () -> Thread.currentThread().getId();
 		// Ex 3
-		BiFunction<String, String, String> getSubString = (s1, s2) -> s1 + s2;
+		BiFunction<String, String, String> concatString = (s1, s2) -> s1.concat(s2);
 	}
 }
