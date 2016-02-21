@@ -1,6 +1,7 @@
 package part2.collections.traversing;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -32,14 +33,14 @@ public class Sample1_TraverseCollections {
 
 		java7Approach_printCollection(words);
 
-		System.out.println("------------------Sort using foreach------------------");
+		System.out.println("------------------foreach------------------");
 		
 		java8Approach_printCollection(words);
 
 	}
 
 	private static void java7Approach_printCollection(List<String> words) {		
-		System.out.println("java7");
+		System.out.println("====java7====");
 		
 		for (String word : words) {
 			System.out.println(word);
@@ -47,11 +48,11 @@ public class Sample1_TraverseCollections {
 	}
 
 	private static void java8Approach_printCollection(List<String> words) {
-		System.out.println("java8");
+		System.out.println("====java8====");
 		
-		// Consumer<String> printWord = (word) -> System.out.println(word);
-		
-		words.forEach((word) -> System.out.println(word));
+		Consumer<String> printWord = (word) -> System.out.println(word);
+		//Collections.sort(words, (s1, s2) -> s1.compareTo(s2));
+		words.forEach(printWord);
 	}
 
 }
