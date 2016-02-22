@@ -18,7 +18,7 @@ import java.util.function.Predicate;
  * @author aohz
  *
  */
-public class Filter {
+public class SolutionEx1 {
 	
 	public static <T> List<T> filter(List<T> list, Predicate<T> p) {
 		List<T> results = new ArrayList<>();

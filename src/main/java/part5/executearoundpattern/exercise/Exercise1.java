@@ -16,7 +16,7 @@ import java.util.List;
  * @author aohz
  *
  */
-public class Filter {
+public class Exercise1 {
 
 	public static List filter(List list, Object obj) {
 		List results = new ArrayList<>();

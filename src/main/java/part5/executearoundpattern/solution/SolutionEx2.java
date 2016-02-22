@@ -1,34 +1,35 @@
-package part5.executearoundpattern.exercise;
+package part5.executearoundpattern.solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
-/**
- * 
- * Implement a map method that apply a lambda expression to each item of the collection
- * 
- * Test the implementation using a lambda expression that:
- * 1- returns a list with the string length
- * 2- returns a list with the first letter of each String.
- * 
- * @author aohz
- *
- */
-public class Mapper {
+
+public class SolutionEx2 {
 	
 	public static <T, R> List<R> map(List<T> list, Function<T, R> f) {
 		List<R> result = new ArrayList<>();
-				
+		for (T t : list) {
+			result.add(f.apply(t));
+		}
+		
+//		Consumer<T> applyFunction = (t) -> {
+//			result.add(f.apply(t));
+//		};		
+//		list.forEach(applyFunction);
+		
 		return result;
 	}
-		
+
 	public static List<Integer> getStringLength(List<String> strings){
-		return null;
+		Function<String, Integer> lenghtsFunction = (s) -> s.length();
+		return map(strings, lenghtsFunction);
 	}
 	
 	public static List<Character> getFirstStringLetter(List<String> strings){
-		return null;
+		Function<String, Character> charsFunction = (s) -> s.charAt(0);
+		return map(strings, charsFunction);
 	}
 		
 	public static void main(String[] args){
