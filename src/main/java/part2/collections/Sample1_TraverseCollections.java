@@ -1,4 +1,4 @@
-package part2.collections.traversing;
+package part2.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,7 +51,7 @@ public class Sample1_TraverseCollections {
 		System.out.println("====java8====");
 		
 		Consumer<String> printWord = (word) -> System.out.println(word);
-		//Collections.sort(words, (s1, s2) -> s1.compareTo(s2));
+
 		words.forEach(printWord);
 	}
 

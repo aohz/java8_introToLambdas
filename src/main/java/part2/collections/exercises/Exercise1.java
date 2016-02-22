@@ -1,4 +1,4 @@
-package part2.collections.traversing.exercises;
+package part2.collections.exercises;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,12 @@ import part2.collections.model.Person;
 /**
  * 1- Transform code to use lambda expressions
  * 2- Sort the list using Collections.sort method and a Lambda Expression
+ * 3- Simplify code to have one single filter method
  * 
  * @author aohz
  *
  */
-public class Sample1_Predicate_NoLambda {
+public class Exercise1 {
 
 	public static void main(String args[]) {
 
@@ -34,12 +35,8 @@ public class Sample1_Predicate_NoLambda {
 			}
 		};
 
-		System.out.println("----- Apply filterAge");
-		for (Person p : people) {
-			if (filterAge.test(p)) {
-				System.out.println(p);
-			}
-		}
+		System.out.println("----- Apply filterAge -----");
+		filter(people, filterAge);
 
 		Predicate<Person> filterSize = new Predicate<Person>() {
 
@@ -48,12 +45,24 @@ public class Sample1_Predicate_NoLambda {
 			}
 		};
 
-		System.out.println("----- Apply both filters");
+		System.out.println("----- Apply Both filterAge -----");
+		filter(people, filterAge, filterSize);
+	}
+	
+	
+	private static void filter(List<Person> people, Predicate<Person> filter1) {
 		for (Person p : people) {
-			if (filterAge.test(p) && filterSize.test(p)) {
+			if (filter1.test(p)) {
 				System.out.println(p);
 			}
 		}
-
+	}
+	
+	private static void filter(List<Person> people, Predicate<Person> filter1, Predicate<Person> filter2) {
+		for (Person p : people) {
+			if (filter1.test(p) && filter2.test(p)) {
+				System.out.println(p);
+			}
+		}
 	}
 }

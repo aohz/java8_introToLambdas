@@ -1,4 +1,4 @@
-package part2.collections.traversing.solutions;
+package part2.collections.solutions;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,11 +11,12 @@ import part2.collections.model.Person;
 /**
  * 1- Transform code to use lambda expressions
  * 2- Sort the list using Collections.sort method and a Lambda Expression
+ * 3- Simplify code to have one single filter method
  * 
  * @author aohz
  *
  */
-public class Sample1_Predicate_withLambda {
+public class SolutionEx1 {
 
 	private static List<Person> people = new ArrayList<>();
 	
