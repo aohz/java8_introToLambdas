@@ -5,7 +5,7 @@ package part1.lambdas;
  * @author aohz
  *
  */
-public class Sample2A_UseSimpleInterface {
+public class Sample3_UseSimpleInterface {
 
     @FunctionalInterface
     public interface SimpleInterface {
@@ -16,8 +16,9 @@ public class Sample2A_UseSimpleInterface {
     public static void main(String[] args) {
 
         SimpleInterface func = () -> System.out.println("Hola");
+        
+        // we can call the lambda expression using the name of the implemented method
         func.doSomething();
-
     }
 
 }

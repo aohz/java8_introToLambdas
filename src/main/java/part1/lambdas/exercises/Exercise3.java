@@ -11,8 +11,8 @@ package part1.lambdas.exercises;
  * @author aohz
  *
  */
-public class Sample2_WithoutLambda {
-
+public class Exercise3 {
+	
     public interface Operation {
 
         int calculate(int oper1, int oper2);

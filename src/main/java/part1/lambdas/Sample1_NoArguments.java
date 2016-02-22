@@ -5,7 +5,7 @@ package part1.lambdas;
  * @author aohz
  *
  */
-public class Sample1A_NoArguments {
+public class Sample1_NoArguments {
 
 	public static void main(String[] args) {
 
@@ -35,8 +35,6 @@ public class Sample1A_NoArguments {
 
 		Runnable r1 = () -> System.out.println("Single Line (lambda): Running Thread");
 		new Thread(r1).start();
-		// new Thread(() -> System.out.println("Single Line (lambda): Running
-		// Thread")).start();
 	}
 
 	// -----------------------------

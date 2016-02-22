@@ -5,7 +5,7 @@ package part1.lambdas;
  * @author aohz
  *
  */
-public class Sample2B_UseInterfaceWithArgs {
+public class Sample4_UseInterfaceWithArgs {
 
 	@FunctionalInterface
 	public interface InterfaceWithArgs {
@@ -14,11 +14,10 @@ public class Sample2B_UseInterfaceWithArgs {
 	}
 
 	public static void main(String[] args) {
+		
+		InterfaceWithArgs obj = (arg1, arg2) -> arg1 + arg2;		
 
-		// Implement samples.interfaces.InterfaceWithArgs to sum
-		InterfaceWithArgs obj = (arg1, arg2) -> arg1 + arg2;
-		// InterfaceWithArgs obj1 = (int arg1, int arg2) -> arg1 + arg2;
-
+		// we can call the lambda expression using the name of the implemented method
 		int calculate = obj.calculate(10, 5);
 		System.out.println("Result " + calculate);
 	}

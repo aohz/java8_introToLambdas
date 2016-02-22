@@ -11,7 +11,7 @@ import java.util.List;
  * @author aohz
  *
  */
-public class Sample1B_withArguments {
+public class Sample2_withArguments {
 
 	public static void main(String args[]) {
 
@@ -22,28 +22,33 @@ public class Sample1B_withArguments {
 		words.add("ddd");
 		words.add("CCC");
 
-		System.out.println("----CASE SENSITIVE----");
-		sortCaseSensitive(words);
-		printCollection(words);
-
-		System.out.println("----CASE INSENSITIVE----");
-		sortCaseInsensitive(words);
+		System.out.println("----Sort Using java 7----");
+		sortCaseSensitiveJava7(words);
+		
+		System.out.println("----Sort Using java 8----");		
+		sortCaseSensitiveJava8(words);
 		printCollection(words);
 	}
 
-	private static void sortCaseSensitive(List<String> words) {
-		// CASE SENSITIVE
-		// Comparator object instantiated as Lambda
+	private static void sortCaseSensitiveJava7(List<String> words) {
+		
+		Comparator<String> comparator = new Comparator<String>() {
+			@Override
+			public int compare(String a, String b) {
+				return a.compareTo(b);
+			}			
+		};
+		
+		Collections.sort(words, comparator);		
+	}
+	
+	private static void sortCaseSensitiveJava8(List<String> words) {		
 		Comparator<String> caseSensitiveComp = (a, b) -> a.compareTo(b);
+		
 		Collections.sort(words, caseSensitiveComp);		
 	}
-
-	private static void sortCaseInsensitive(List<String> words) {
-		// CASE INSENSITIVE
-		// Comparator as a proper Lambda (anonymous) in the sort method call
-		Collections.sort(words, (a, b) -> a.compareToIgnoreCase(b));		
-	}
-
+	
+	
 	private static <Z extends Object> void printCollection(Collection<Z> collection) {
 		for (Z string : collection) {
 			System.out.println(string);

@@ -10,7 +10,7 @@ package part1.lambdas.solutions;
  *
  * @author DSFO
  */
-public class Sample1_WithLambda {
+public class SolutionEx1 {
     
     public static void main (String[] args) {        
         System.out.println("Main Start...");

@@ -12,24 +12,22 @@ package part1.lambdas.exercises;
  * @author aohz
  *
  */
-public class Sample1_WithoutLambda {
+public class Exercise1 {
 
 	public static void main(String[] args) {
 		System.out.println("Main Start...");
 
-		MyRunnableTask task = new MyRunnableTask();
+		Runnable task = new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("processing in thread");
+			}
+		};
+
 		Thread myThread = new Thread(task);
 		myThread.start();
+		
 		System.out.println("...End Main");
-
-	}
-
-	public static class MyRunnableTask implements Runnable {
-
-		@Override
-		public void run() {
-			System.out.println("processing in thread");
-		}
 	}
 
 }
