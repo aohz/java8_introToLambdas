@@ -52,10 +52,10 @@ public class PersonImpl implements Person {
 
     //Return type and method signature as in Comparator interface
     public static int staticCompareByAge(PersonImpl person1, PersonImpl person2) {
-        return Integer.valueOf(person1.age).compareTo(person2.age);
+        return Integer.compare(person1.age, person2.age);
     }
     
     public int compareByAge(PersonImpl person){
-    	 return Integer.valueOf(this.age).compareTo(person.age);
+    	 return Integer.compare(this.age, person.age);
     }
 }

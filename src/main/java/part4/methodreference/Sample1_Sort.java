@@ -1,6 +1,7 @@
 package part4.methodreference;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -37,34 +38,57 @@ public class Sample1_Sort {
 	}
 
 	private static void sort(List<PersonImpl> people) {
-		Collections.sort(people, (p1, p2) -> {
-			return ((Integer) p1.getAge()).compareTo(p2.getAge());
-		});
+		Collections.sort(people, (p1, p2) -> 
+			Integer.compare(p1.getAge(), p2.getAge())
+		);
 	}
 
-	// The goal is to "sort" by person age implementing the
-	// comparator as a method... check "compareAges(Person, Person)" in the
-	// Person class
+	/**
+	 * Class::staticMethod
+	 * 
+	 */
 	private static void sortUsingStaticMethod(List<PersonImpl> people) {
-		Collections.sort(people, PersonImpl::staticCompareByAge);
+		
+		Comparator<PersonImpl> compare = (p1, p2) -> PersonImpl.staticCompareByAge(p1, p2);		
+		// Comparator<PersonImpl> compareMR = PersonImpl::staticCompareByAge;
+		
+		Collections.sort(people, compare);
 	}
 
+	/**
+	 * object::instanceMethod
+	 * 
+	 */
 	private static void sortUsingInstanceMethodOfParticularObject(List<PersonImpl> people) {
 		ComparisonProvider myComparisonProvider = new ComparisonProvider();
-		Collections.sort(people, myComparisonProvider::compareByAge);
+		
+		Comparator<PersonImpl> compare = (p1, p2) -> myComparisonProvider.compareByAge(p1, p2);
+		// Comparator<PersonImpl> compareMR = myComparisonProvider::compareByAge;
+				
+		Collections.sort(people, compare);
 	}
 	
+	/**
+	 * Class::instanceMethod
+	 * 
+	 */
 	private static void sortUsingInstanceMethodOfArbitraryObject(List<PersonImpl> people) {
-		Collections.sort(people, PersonImpl::compareByAge);
+		
+		Comparator<PersonImpl> compare = (p1, p2) -> p1.compareByAge(p2);
+		// Comparator<PersonImpl> compareMR = PersonImpl::compareByAge;
+		
+		Collections.sort(people, compare);
 	}
 	
+	/**
+	 * Class::new
+	 */
 	private static void referenceToConstructor() {
 		Supplier<Person> supplier = () -> new PersonImpl();
 		
-		System.out.println(supplier.get() == supplier.get());
-		
-		Supplier<Person> supplierRefMethod = PersonImpl::new;
-		System.out.println(supplierRefMethod.get() == supplierRefMethod.get());
+		//Supplier<Person> supplierMR = PersonImpl::new;
+				
+		System.out.println(supplier.get());
 		
 		// IntFunction<int[]> supplierArray = (x) -> new int[x];
 		// IntFunction<int[]> supplierArray2 = int[] :: new;   

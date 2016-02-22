@@ -12,7 +12,8 @@ import part4.methodreference.model.Student;
  * @author aohz
  *
  */
-public class Sample1_methodRererence {
+public class SolutionEx1 {
+	
 	public static void main(String[] args) {
 
 		// Ex 1
