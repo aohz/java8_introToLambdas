@@ -50,7 +50,8 @@ public class Sample1_Sort {
 	private static void sortUsingStaticMethod(List<PersonImpl> people) {
 		
 		Comparator<PersonImpl> compare = (p1, p2) -> PersonImpl.staticCompareByAge(p1, p2);		
-		// Comparator<PersonImpl> compareMR = PersonImpl::staticCompareByAge;
+		
+		Comparator<PersonImpl> compareMR = PersonImpl::staticCompareByAge;
 		
 		Collections.sort(people, compare);
 	}
@@ -63,7 +64,8 @@ public class Sample1_Sort {
 		ComparisonProvider myComparisonProvider = new ComparisonProvider();
 		
 		Comparator<PersonImpl> compare = (p1, p2) -> myComparisonProvider.compareByAge(p1, p2);
-		// Comparator<PersonImpl> compareMR = myComparisonProvider::compareByAge;
+		
+		Comparator<PersonImpl> compareMR = myComparisonProvider::compareByAge;
 				
 		Collections.sort(people, compare);
 	}
@@ -75,7 +77,8 @@ public class Sample1_Sort {
 	private static void sortUsingInstanceMethodOfArbitraryObject(List<PersonImpl> people) {
 		
 		Comparator<PersonImpl> compare = (p1, p2) -> p1.compareByAge(p2);
-		// Comparator<PersonImpl> compareMR = PersonImpl::compareByAge;
+		
+		Comparator<PersonImpl> compareMR = PersonImpl::compareByAge;
 		
 		Collections.sort(people, compare);
 	}
@@ -86,7 +89,7 @@ public class Sample1_Sort {
 	private static void referenceToConstructor() {
 		Supplier<Person> supplier = () -> new PersonImpl();
 		
-		//Supplier<Person> supplierMR = PersonImpl::new;
+		Supplier<Person> supplierMR = PersonImpl::new;
 				
 		System.out.println(supplier.get());
 		

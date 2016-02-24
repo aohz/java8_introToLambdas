@@ -19,7 +19,7 @@ public class Exercise3 {
     }
 
     public static void main(String[] args) {
-        System.out.print("Calculator... (4*6)+(-2*3) =");
+        System.out.print("Calculator... (4+6)+(-2*3) =");
 
         Operation sum = new Operation() {
 

@@ -18,11 +18,11 @@ public class SolutionEx3 {
     }
     
     public static void main(String[] args) {
-        System.out.print("Calculator... (4*6)+(-2*3) =");        
+    	System.out.print("Calculator... (4+6)+(-2*3) =");
 
-        Operation sum = (int oper1, int oper2) -> oper1 + oper2;
-        Operation subs = (int oper1, int oper2) -> oper1 - oper2;
-        Operation mult = (int oper1, int oper2) -> oper1 * oper2;
+        Operation sum = (oper1,  oper2) -> oper1 + oper2;
+        Operation subs = (oper1,  oper2) -> oper1 - oper2;
+        Operation mult = (oper1,  oper2) -> oper1 * oper2;
         
         int result = sum.calculate(mult.calculate(4, 6),mult.calculate(subs.calculate(0,2), 3));
    
