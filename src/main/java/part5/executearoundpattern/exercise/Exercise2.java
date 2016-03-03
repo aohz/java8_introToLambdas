@@ -24,11 +24,11 @@ public class Exercise2 {
 	}
 		
 	public static List<Integer> getStringLength(List<String> strings){
-		return null;
+		return map(strings, null);
 	}
 	
 	public static List<Character> getFirstStringLetter(List<String> strings){
-		return null;
+		return map(strings, null);
 	}
 		
 	public static void main(String[] args){

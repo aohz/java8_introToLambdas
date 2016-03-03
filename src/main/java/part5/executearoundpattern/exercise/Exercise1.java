@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Exercise1 {
 
-	public static List filter(List list, Object obj) {
+	public static List filter(List list, Object lambda) {
 		List results = new ArrayList<>();
 		return results;
 	}
@@ -33,14 +33,17 @@ public class Exercise1 {
 
 	public static void printNoEmptyString(List<String> listOfStrings) {
 		System.out.println("==========No empty========");
+		filter(listOfStrings, null);
 	}
 
 	public static void printShorterThan3(List<String> listOfStrings) {
 		System.out.println("==========Sort String========");
+		filter(listOfStrings, null);
 	}
 
 	public static void printStringsAppliyingBothFilers(List<String> listOfStrings) {
 		System.out.println("==========Both========");
+		filter(listOfStrings, null);
 	}
 
 }
