@@ -7,7 +7,7 @@
 package part1.lambdas.exercises;
 
 /**
- * Transform code to use lambda expresiones
+ * Transform code to use lambda expressions
  * 
  * @author aohz
  *
