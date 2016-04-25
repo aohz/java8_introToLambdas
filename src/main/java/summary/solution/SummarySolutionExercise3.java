@@ -30,7 +30,7 @@ public class SummarySolutionExercise3 implements Exercise {
 			try {
 				runner.run();
 			} catch (Exception checkedException) {
-				new RuntimeException(checkedException);
+				throw new RuntimeException(checkedException);
 			}
 		};
 	}

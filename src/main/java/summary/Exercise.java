@@ -20,7 +20,7 @@ public interface Exercise {
             content = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/alice.txt").toURI())), StandardCharsets.UTF_8);
             return Arrays.asList(content.split("[\\P{L}]+"));
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.toString());
             throw new RuntimeException(e);
         }
     }
@@ -31,7 +31,7 @@ public interface Exercise {
             content = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/alice.txt").toURI())), StandardCharsets.UTF_8);
             return content.split("[\\P{L}]+");
         } catch (Exception e) {
-            e.printStackTrace();
+        	System.out.println(e.toString());
             throw new RuntimeException(e);
         }
     }

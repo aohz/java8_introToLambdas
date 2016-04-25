@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  */
 public class Sample1_TraverseCollections {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		
 		List<String> words = new ArrayList<>();
 		words.add("AAA");
@@ -50,7 +50,7 @@ public class Sample1_TraverseCollections {
 	private static void java8Approach_printCollection(List<String> words) {
 		System.out.println("====java8====");
 		
-		Consumer<String> printWord = (word) -> System.out.println(word);
+		Consumer<String> printWord = word -> System.out.println(word);
 
 		words.forEach(printWord);
 	}

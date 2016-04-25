@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class Exercise2 {
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 
 		List<String> words = new ArrayList<String>();
 		words.add("AAA");

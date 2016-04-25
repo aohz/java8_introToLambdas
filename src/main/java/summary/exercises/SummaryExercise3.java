@@ -27,7 +27,7 @@ public class SummaryExercise3 implements Exercise {
 				// remove the exception handling from this invocation and
 				// delegate it to a generic method
 			} catch (Exception checkedException) {
-				new RuntimeException(checkedException);
+				throw new RuntimeException(checkedException);
 			}
 		}).start();
 	}

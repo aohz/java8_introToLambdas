@@ -9,13 +9,13 @@ public class CurryingSample {
 	interface F3 extends DoubleFunction<DoubleFunction<DoubleUnaryOperator>> {
 
 	}
-
+	@FunctionalInterface
 	interface DoubleTernaryOperator {
 
 		public double apply(double a, double b, double c);
 	}
 
-	public static void main(String args[]) {
+	public static void main(String... args) {
 
 		curryingToPreventManyInterfaces();
 		
@@ -35,11 +35,8 @@ public class CurryingSample {
 		
 		double a = 1.0;
 		double b = 1.0;
-
-//		a++;
-//		b++;
 		
-		System.out.println(stream1.map((x) -> (a + b) * x).findFirst());
+		System.out.println(stream1.map(x -> (a + b) * x).findFirst());
 		
 		
 		DoubleStream stream2 = DoubleStream.of(2.0);
