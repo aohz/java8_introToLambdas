@@ -16,7 +16,7 @@ public class Exercise1 {
 	public static void main(String[] args) {
 
 		// Ex 1
-		Function<Student, Integer> getStudentAge = (s) -> s.getAge();
+		Function<Student, Integer> getStudentAge = s -> s.getAge();
 		// Ex 2
 		LongSupplier getThreadId = () -> Thread.currentThread().getId();
 		// Ex 3

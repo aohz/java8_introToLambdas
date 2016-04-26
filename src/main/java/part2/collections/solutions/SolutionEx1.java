@@ -20,7 +20,7 @@ public class SolutionEx1 {
 
 	private static List<Person> people = new ArrayList<>();
 	
-    public static void main(String args[]) {        
+    public static void main(String... args) {        
 
         people.add(new Person("A Dude", 21));
         people.add(new Person("Jose", 30));

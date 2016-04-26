@@ -30,6 +30,7 @@ public class Exercise1 {
 		
 		Predicate<Person> filterAge = new Predicate<Person>() {
 
+			@Override
 			public boolean test(Person person) {
 				return person.getAge() < 30;
 			}
@@ -40,6 +41,7 @@ public class Exercise1 {
 
 		Predicate<Person> filterSize = new Predicate<Person>() {
 
+			@Override
 			public boolean test(Person person) {
 				return person.getName().length() < 7;
 			}

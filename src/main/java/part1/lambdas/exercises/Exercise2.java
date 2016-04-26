@@ -17,7 +17,7 @@ public class Exercise2 {
 
 	public static void main(String[] args) {
 
-		List<String> words = new ArrayList<String>();
+		List<String> words = new ArrayList<>();
 		words.add("AAA");
 		words.add("EEE");
 		words.add("bbb");
