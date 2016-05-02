@@ -5,7 +5,7 @@ import org.junit.Test;
 import summary.Exercise;
 
 /**
- * Didn’t you always hate it that you had to deal with checked exceptions in a
+ * Didnt you always hate it that you had to deal with checked exceptions in a
  * Runnable? Write a method uncheck that catches all checked exceptions and
  * turns them into unchecked exceptions.
  * 
